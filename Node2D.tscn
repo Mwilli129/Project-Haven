@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="Environment" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1046.81, 1000.44 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="player"]
+position = Vector2( 2904, 1863 )
+scale = Vector2( 36.7031, 36.7031 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+modulate = Color( 0.360784, 1, 0, 1 )
+position = Vector2( 2893.81, 1854.44 )
+shape = SubResource( 1 )
